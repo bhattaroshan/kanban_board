@@ -114,7 +114,7 @@ function page() {
                                                                         >
                                                                             <p className='text-sm font-light'>{item.task}</p>
                                                                         </div>
-                                                                    )}
+                                                                    )} 
                                                                 </Draggable>
                                                             ))
                                                         }
