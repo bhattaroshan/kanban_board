@@ -1,7 +1,7 @@
 'use client'
 import { useBoardStore } from '@/store/BoardStore';
 import React, { useEffect } from 'react'
-import {DragDropContext, DropResult, Droppable} from 'react-beautiful-dnd';
+import {DragDropContext, DropResult, Droppable} from '@hello-pangea/dnd';
 import Column from './Column';
 
 function Board() {
@@ -19,7 +19,7 @@ function Board() {
         if(!destination) return; 
 
         if(type==='column'){
-            
+
         }
     }
 
