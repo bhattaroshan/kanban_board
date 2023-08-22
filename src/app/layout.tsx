@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
-
+import Drawer from '@/components/Drawer';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Trello 2.0 clone',
@@ -14,8 +15,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-[#F5F6F8]'>
-        {children}
+      <body className='bg-blue-200'>
+        <div className='flex flex-col'>
+          <Header/>
+          <div className='grid grid-cols-12 pt-[120px] '>
+            <Drawer className='grid col-span-2'/>
+            <div className='grid col-span-10 justify-items-center'>
+              {children}
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   )
