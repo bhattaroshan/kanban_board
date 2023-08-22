@@ -15,16 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-blue-200'>
-        <div className='flex flex-col'>
+      <body className=''>
           <Header/>
-          <div className='grid grid-cols-12 pt-[120px] '>
-            <Drawer className='grid col-span-2'/>
-            <div className='grid col-span-10 justify-items-center'>
-              {children}
-            </div>
+          <div className='flex pt-[120px] justify-start items-start'>
+            <Drawer className='w-2/12 h-screen'/>
+              <div className='w-9/12 mx-auto'>
+                {children}
+              </div>
           </div>
-        </div>
       </body>
     </html>
   )

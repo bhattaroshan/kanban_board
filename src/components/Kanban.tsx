@@ -98,14 +98,14 @@ function Kanban() {
     }
 
     return (
-        <div className='h-screen '>
+        <div className=''>
         <DragDropContext onDragEnd={handleDragEnd}>
-            <div>
+            <div className='w-full'>
 
             <Droppable droppableId='board' direction='horizontal' type='column'>
                 {(provided)=>(
                     <div {...provided.droppableProps} ref={provided.innerRef}
-                        className='grid grid-cols-1 lg:grid-cols-5 gap-5 m-4 max-w-7xl min-w-xl mx-auto overflow-x'
+                        className='grid grid-cols-1 lg:grid-cols-5 gap-5 m-4 mx-auto'
                     >
                         {
                             board.map((column,index)=>(
@@ -113,7 +113,8 @@ function Kanban() {
                                     {(provided)=>(
                                         <div {...provided.dragHandleProps} 
                                             {...provided.draggableProps}
-                                            ref={provided.innerRef}>
+                                            ref={provided.innerRef}
+                                            >
                                             <Droppable droppableId={index.toString()}
                                                 type='card'>
                                                     {(provided,snapshot)=>(
@@ -122,7 +123,7 @@ function Kanban() {
                                                        {...provided.droppableProps} ref={provided.innerRef}>
                                                         <div className='flex justify-between text-white'>
                                                             <h1>{column.name}</h1>
-                                                            <div className='flex items-center justify-center rounded-[25px] w-[25px] h-[25px] bg-blue-300 '>
+                                                            <div className='flex items-center justify-center rounded-full w-6 h-6 bg-blue-300 '>
                                                                 <p className='text-sm font-light'>{column.items.length}</p>
                                                             </div>
 
